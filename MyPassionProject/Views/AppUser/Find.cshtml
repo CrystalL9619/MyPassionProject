@@ -1,0 +1,35 @@
+﻿@model MyPassionProject.Models.ViewModels.FindAppUser
+
+@{
+    ViewBag.Title = "Find";
+}
+<div class="row">
+    <div class="col my-4">
+        <a class="btn btn-info me-2" href="/AppUser/List">Go back to list</a>
+    </div>
+</div>
+
+<h2 class="my-3">@Model.SelectedAppUser.UserName</h2>
+<div><strong>Email:</strong> @Model.SelectedAppUser.Email</div>
+<div><strong>Phone Number:</strong> @Model.SelectedAppUser.PhoneNumber</div>
+
+<div class="row">
+    <div class="col-6">
+
+        <a class="btn btn-primary me-2" href="/AppUser/Edit/@Model.SelectedAppUser.UserId">Update This  User</a>
+
+        @Html.ActionLink("Delete This User", "DeleteConfirm", "AppUser", new { id = Model.SelectedAppUser.UserId }, new { @class = "btn btn-secondary me-2" })
+    </div>
+</div>
+<div class="my-3">
+    <h3>Participate In:</h3>
+    @foreach (var Event in Model.PaticipatingEvents)
+    {
+        <a href="/Event/Find/@Event.EventId">@Event.Title</a><br />
+
+
+    }
+
+
+
+</div>

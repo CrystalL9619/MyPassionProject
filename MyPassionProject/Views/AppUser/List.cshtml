@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MyPassionProject.Models.AppUserDto>
+
+@{
+    ViewBag.Title = "AppUsers";
+}
+
+<h2>List</h2>
+<div class="row">
+    @foreach (MyPassionProject.Models.AppUserDto AppUser in Model)
+    {
+        <div class="card mb-3">
+
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="/AppUser/Find/@AppUser.UserId"> @AppUser.UserName</a>
+                </h5>
+            </div>
+
+        </div>
+
+    }
+</div>
+    <div>
+        <a href="/AppUser/New" class="btn btn-primary">Add New User</a>
+    </div>
+

@@ -1,0 +1,19 @@
+﻿﻿@model MyPassionProject.Models.AppUserDto
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<div>
+
+    <h2>Are you sure you want to delete this User?</h2>
+    <p>This action cannot be undone.</p>
+    <div class="row">
+        <div class="col-6">
+            <form class="d-inline" method="POST" action="/AppUser/Delete/@Model.UserId">
+                <button class="btn btn-secondary me-2">Confirm Delete</button>
+            </form>
+       
+                <a class="btn btn-primary" href="/AppUser/Find/@Model.UserId">Cancel</a>
+        </div>
+    </div>
+</div>

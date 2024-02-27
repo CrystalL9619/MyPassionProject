@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Find";
 }
+<<<<<<< Updated upstream
 
 <a href="/Event/List">Go back to list</a>
 <h2>@Model.Title</h2>
@@ -21,3 +22,50 @@
 <div>
     <a href="/Event/Edit/@Model.EventId">Update This  Event</a>
 </div>
+=======
+<div class="row">
+    <div class="col my-4">
+        <a href="/Event/List" class="btn btn-info me-2">Go back to list</a>
+    </div>
+</div>
+<h2 class="my-4">@Model.SelectedEvent.Title</h2>
+
+<div><strong>Location:</strong> @Model.SelectedEvent.Location</div>
+<div><strong>Event Time:</strong> @Model.SelectedEvent.EventDateTime</div>
+<div><strong>Capacity:</strong> @Model.SelectedEvent.Capacity</div>
+<div><strong>Details:</strong> @Model.SelectedEvent.Details</div>
+<div><strong>Category:</strong> @Model.SelectedEvent.CategoryName</div>
+<div class="row">
+    <div class="col-6">
+        <a class="btn btn-primary me-2" href="/Event/Edit/@Model.SelectedEvent.EventId">Update This Event</a>
+        @Html.ActionLink("Delete This Event", "DeleteConfirm", "Event", new { id = Model.SelectedEvent.EventId }, new { @class = "btn btn-secondary me-2" })
+    </div>
+</div>
+
+
+<div>
+    <h2>Paticipant in this @Model.SelectedEvent.Title:</h2>
+    @foreach (var AppUser in Model.ParticipatingUsers)
+    {
+        <a href="/AppUser/Find/@AppUser.UserId">@AppUser.UserName</a>
+        <a class="text-danger" href="/Event/UnAssociate/@Model.SelectedEvent.EventId?UserId=@AppUser.UserId">[x]</a><br />
+    }
+</div>
+
+<div>
+    <h4>Add new paticipant to this Event: </h4>
+    <form method="POST" action="/Event/Associate">
+        <input type="hidden" name="EventId" value="@Model.SelectedEvent.EventId">
+        <label for="UserId"><strong>Select User:</strong></label>
+        <select name="UserId" id="UserId">
+            @foreach (var AppUser in Model.NotPaticipatingUsers)
+            {
+                <option value="@AppUser.UserId">@AppUser.UserName</option>
+            }
+        </select>
+        <input type="submit" class="btn btn-info" value="Associate AppUser" />
+    </form>
+</div>
+
+
+>>>>>>> Stashed changes

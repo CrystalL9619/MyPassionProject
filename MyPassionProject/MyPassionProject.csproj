@@ -275,8 +275,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\AppUsers.cshtml" />
+    <Content Include="Views\Home\Categories.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -304,7 +304,23 @@
     <Content Include="Views\Event\New.cshtml" />
     <Content Include="Views\Event\Edit.cshtml" />
     <Content Include="Views\Event\DeleteConfirm.cshtml" />
+<<<<<<< Updated upstream
     <Content Include="Views\Shared\_EventPartial.cshtml" />
+=======
+    <Content Include="Views\Category\List.cshtml" />
+    <Content Include="Views\Category\Find.cshtml" />
+    <Content Include="Views\Shared\_CategoryPartial.cshtml" />
+    <Content Include="Views\Category\New.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Error.cshtml" />
+    <Content Include="Views\Category\DeleteConfirm.cshtml" />
+    <Content Include="Views\AppUser\List.cshtml" />
+    <Content Include="Views\AppUser\Find.cshtml" />
+    <Content Include="Views\AppUser\New.cshtml" />
+    <Content Include="Views\AppUser\Edit.cshtml" />
+    <Content Include="Views\AppUser\DeleteConfirm.cshtml" />
+    <Content Include="Views\AppUser\Error.cshtml" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

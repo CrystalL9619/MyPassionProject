@@ -58,12 +58,25 @@ namespace MyPassionProject.Controllers
         // GET: Event/New
         public ActionResult New()
         {
+<<<<<<< Updated upstream
             return View();
+=======
+            //infomation about all categories in the system
+            //GET api/CategoryData/ListCategories
+            FindCategory ViewModel = new FindCategory();
+            string url = "CategoryData/ListCategories";
+            HttpResponseMessage response = client.GetAsync(url).Result;
+            IEnumerable<CategoryDto> CategoryOptions = response.Content.ReadAsAsync<List<CategoryDto>>().Result;
+            ViewModel.CategoryOptions = CategoryOptions;
+            return View(ViewModel);
+
+>>>>>>> Stashed changes
         }
         // POST: Event/Create
         [HttpPost]
         public ActionResult Create(Event newEvent)
         {
+            
             Debug.WriteLine("the json payload is :");
             //Debug.WriteLine(Event.Title);
             //objective: add a new event into our system using the API

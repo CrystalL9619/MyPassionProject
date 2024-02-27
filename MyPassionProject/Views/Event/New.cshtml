@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 ﻿
+=======
+﻿@model MyPassionProject.Models.ViewModels.FindCategory﻿
+>>>>>>> Stashed changes
 @{
     ViewBag.Title = "Create";
 }
@@ -6,21 +10,22 @@
 <h2>Create Your Event</h2>
 
 <form action="/Event/Create" method="POST">
-    <div>
-        <label>Event Name:</label> <input type="text" name="Title" />
+    <div class="my-4">
+        <label class="form-label">Event Name:</label> <input type="text" name="Title" />
     </div>
-    <div>
-        <label>Event Location</label> <input type="text" name="Location" />
+    <div class="my-4">
+        <label class="form-label">Event Location:</label> <input type="text" name="Location" />
     </div>
-    <div>
-        <label>Event Date & Time:</label> <input type="text" name="EventDateTime" />
+    <div class="my-4">
+        <label class="form-label">Event Date & Time:</label> <input type="text" name="EventDateTime" />
     </div>
-    <div>
-        <label>Event Capacity</label> <input type="text" name="Capacity" />
+    <div class="my-4">
+        <label class="form-label">Event Capacity:</label> <input type="text" name="Capacity" />
     </div>
-    <div>
-        <label>Event Details</label> <input type="text" name="Details" />
+    <div class="my-4">
+        <label class="form-label">Event Details:</label> <input type="text" name="Details" />
     </div>
+<<<<<<< Updated upstream
     <div>
         <label>Category</label>
         <select name="CategoryId">
@@ -33,3 +38,29 @@
 
     </div>
 </form>
+=======
+    <div class="row my-4">
+        <div class="col-md-3">
+
+            <label class="form-label">Category:</label>
+            <select name="CategoryId" class="form-select">
+                @foreach (var category in Model.CategoryOptions)
+                {
+                    <option value="@category.CategoryId">@category.CategoryName</option>
+
+                }
+            </select>
+
+        </div>
+    </div>
+
+    <div class="row my-4">
+        <div class="col-6">
+            <div>
+                <input type="submit" class="btn btn-primary" value="Create" />
+                <a href="@Url.Action("List", "Event")" class="btn btn-secondary">Cancel</a>
+            </div>
+        </div>
+    </div>
+</form>
+>>>>>>> Stashed changes
